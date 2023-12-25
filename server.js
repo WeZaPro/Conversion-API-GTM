@@ -2,6 +2,7 @@ const express = require("express");
 var axios = require("axios");
 const app = express();
 const cors = require("cors");
+const PORT = process.env.PORT || 9000;
 
 let counter = 0; // -------> test html
 app.use(express.static("client")); // -------> test html
@@ -204,6 +205,9 @@ app.get("/text", (req, res) => {
 });
 
 //-------------------------END
-app.listen(9000, () => {
-  console.log("Application is running on port 9000");
+// app.listen(9000, () => {
+//   console.log("Application is running on port 9000");
+// });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
